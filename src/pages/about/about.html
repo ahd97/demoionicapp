@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+          <ion-label floating >Title</ion-label>
+          <ion-input type="text" [(ngModel)]="title"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Creator</ion-label>
+          <ion-input type="text" [(ngModel)]="creator" (keyup.enter)="onAdd(title,creator)" ></ion-input>
+        </ion-item>
+  </ion-list>
+  <ion-list >
+    <ion-item *ngFor="let item of add1" >
+  <ion-card >
+    <img height="150" width="120" src="{{item.Path}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{item.Title}}
+        </ion-card-title>
+      <p>
+       {{item.Creator}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block (click)="onDelete(item)" ><ion-icon name="trash" ></ion-icon></button>
+</ion-item>
+</ion-list>
+</ion-content>
