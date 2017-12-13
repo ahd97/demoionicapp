@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>add</ion-title>
+    <ion-title>Task</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -29,8 +29,8 @@
   <ion-list><br>
 <ion-item *ngFor="let item of arr">
   <ion-label>{{item.Title}}</ion-label>
-  <ion-label padding="right" (click)="onDelete(item)" [ngClass]="{doneStatus: item.Status=='done',pendingStatus: item.Status=='pending'}"><ion-icon name="trash" ></ion-icon></ion-label> 
-  <ion-label padding="right" (click)="onEdit(item)" ><ion-icon name="add" ></ion-icon></ion-label> 
+  <ion-label ion-right (click)="onDelete(item)" [ngClass]="{doneStatus: item.Status=='done',pendingStatus: item.Status=='pending'}"><ion-icon name="trash" ></ion-icon></ion-label> 
+  <ion-label ion-right (click)="onEdit(item)" ><ion-icon name="add" ></ion-icon></ion-label> 
 </ion-item>
   </ion-list>
 </ion-list>
