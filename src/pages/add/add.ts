@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { Tasks } from '../Tasks';
+import { NgModel } from '@angular/forms/src/directives/ng_model';
 
 /**
  * Generated class for the AddPage page.
@@ -15,6 +16,9 @@ import { Tasks } from '../Tasks';
   templateUrl: 'add.html',
 })
 export class AddPage {
+  id:any='';
+  title:string='';
+
 arr:Tasks[]=[
   new Tasks(1,'abc','pending'),
   new Tasks(1,'efg','pending'),
@@ -27,8 +31,9 @@ arr:Tasks[]=[
     console.log('ionViewDidLoad AddPage');
   }
 onAdd(id,title){
-  this.arr.push(new Tasks(id,title,'pendind'));
-  
+  this.arr.push(new Tasks(id,title,'pending'));
+  this.id='' ;
+  this.title='';
 }
 onDelete(item){
   this.arr.splice(this.arr.indexOf(item),1);

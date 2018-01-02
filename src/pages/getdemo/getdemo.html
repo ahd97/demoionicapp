@@ -1,0 +1,26 @@
+<!--
+  Generated template for the GetdemoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>getdemo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of designs" >
+       {{item.Design_name}}
+   </ion-item>
+   <ion-item *ngFor="let item of colors">
+        {{item.Color_name}}
+   </ion-item>
+ </ion-list>
+
+</ion-content>
